@@ -4,6 +4,7 @@ import 'providers/theme_provider.dart';
 import 'providers/auth_provider.dart';
 import 'screens/home_screen.dart';
 import 'screens/login_screen.dart';
+import 'screens/account_type_selection_screen.dart';
 import 'themes/app_theme.dart';
 
 class MyApp extends StatelessWidget {
@@ -19,12 +20,11 @@ class MyApp extends StatelessWidget {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeProvider.themeMode,
-          home: authProvider.isAuthenticated 
-              ? const HomeScreen() 
-              : const LoginScreen(),
+          home: const AccountTypeSelectionScreen(),
           routes: {
             '/home': (context) => const HomeScreen(),
             '/login': (context) => const LoginScreen(),
+            '/account-type-selection': (context) => const AccountTypeSelectionScreen(),
           },
         );
       },
